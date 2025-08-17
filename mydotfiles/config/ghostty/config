@@ -1,0 +1,49 @@
+
+keybind = shift+enter=text:\n
+keybind = cmd+shift+t=new_window
+
+font-family = ""
+font-family = "MesloLGLDZ Nerd Font Mono"
+font-size = 15
+
+#window-height = 60
+#window-width = 100
+#window-position-x = 377
+#window-position-y = 0
+
+background-opacity = 0.7
+background-blur = true
+
+font-style = ""
+font-thicken = true
+font-thicken-strength = 158
+
+auto-update = "download"
+
+auto-update-channel = tip
+
+macos-icon = glass 
+#macos-icon-frame = chrome
+#macos-icon-ghost-color = #ffffff
+#macos-icon-screen-color = #3551f3
+
+theme = Atom
+
+shell-integration = zsh
+
+mouse-hide-while-typing = true
+focus-follows-mouse = true
+#cursor-color = #FF0000
+
+window-padding-x = 8
+window-padding-y = 16
+window-inherit-working-directory = true
+window-theme = ghostty
+
+
+gtk-titlebar = true
+
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+copy-on-select = true

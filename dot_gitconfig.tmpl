@@ -1,0 +1,33 @@
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	name = Rex Liu
+	email = hi@r3x.sh
+	signingkey = F6E1D95B5DE90338
+[pull]
+	rebase = true
+[core]
+	editor = subl -n -w
+	excludesfile = /Users/rexliu/.gitignore_global
+[credential]
+	helper = osxkeychain
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[init]
+	defaultBranch = main
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/rexliu/.stCommitMsg
+	gpgsign = true
+[credential "https://git.overleaf.com"]
+	provider = generic
