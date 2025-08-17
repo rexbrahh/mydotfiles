@@ -1,0 +1,2 @@
+# Ignore folders with sensitive data
+~/.config/nvim/pack/github/
