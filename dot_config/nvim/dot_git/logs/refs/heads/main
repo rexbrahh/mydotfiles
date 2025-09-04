@@ -1,1 +1,5 @@
 0000000000000000000000000000000000000000 bd6a7fa2e964ff055253aaa64d5d02b1bae4fbf6 Rex Liu <hi@r3x.sh> 1756230062 -0400	clone: from https://github.com/rexbrahh/.nvim.git
+bd6a7fa2e964ff055253aaa64d5d02b1bae4fbf6 a84fad0085f1eaea81033f7e6b18f10579399ef9 Rex Liu <hi@r3x.sh> 1757025605 -0400	commit: update ascii art and added mouse mode in vim
+a84fad0085f1eaea81033f7e6b18f10579399ef9 0a9ab8412d409de765d04f7ee5b0b810d4246a72 Rex Liu <hi@r3x.sh> 1757026171 -0400	commit: update ascii art
+0a9ab8412d409de765d04f7ee5b0b810d4246a72 9eb4f6ec9fa065bbdf9dc8d6719c28814ae95c16 Rex Liu <hi@r3x.sh> 1757027549 -0400	commit: docker one-liner installation setup
+9eb4f6ec9fa065bbdf9dc8d6719c28814ae95c16 542ae0c51f639bc4c4cc00bd6b4fee219fa6042c Rex Liu <hi@r3x.sh> 1757027557 -0400	pull (finish): refs/heads/main onto 4d5c7691c547f28178072bbdf4348aebd84b4fdb
