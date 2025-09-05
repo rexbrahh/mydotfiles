@@ -87,7 +87,6 @@ starship init fish | source
 
 # ----- alias / functions -----
 # alias
-alias claude="/Users/rexliu/.claude/local/claude"
 
 # y() function (yazi cwd transfer) — translated to fish
 function y
