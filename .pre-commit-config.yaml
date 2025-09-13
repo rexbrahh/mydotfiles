@@ -29,3 +29,9 @@ repos:
         pass_filenames: true
         types: [markdown]
         stages: [pre-commit]
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.2
+    hooks:
+      - id: gitleaks
+        args: ["--staged", "--redact", "-v"]
