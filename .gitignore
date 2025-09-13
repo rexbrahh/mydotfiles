@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+
+# Editor/IDE
+*.swp
+*.swo
+*.swn
+*~
+.vscode/
+.idea/
+# AI-generated Markdown
+**/docs/ai/
+**/ai-generated/
+**/*.ai.md
+**/*-ai.md
+**/*_ai.md
+# Secrets / keys (prevent accidental commits)
+*.key
+*.priv
+*.dec
+*.pem
+*.der
+id_*

@@ -1,2 +1,10 @@
 # Ignore folders with sensitive data
 ~/.config/nvim/pack/github/
+
+# Exclude VCS and ephemeral files from ~/.config/nix being tracked by chezmoi
+~/.config/nix/.git/
+~/.config/nix/result
+~/.config/nix/.DS_Store
+~/.config/nix/**/.DS_Store
+~/.config/nix/.direnv/
+~/.config/nix/.devenv*/
