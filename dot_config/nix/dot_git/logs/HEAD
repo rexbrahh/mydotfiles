@@ -1,0 +1,19 @@
+0000000000000000000000000000000000000000 b045fc119dccab05fb75cddc3dea39a814a7357a Rex Liu <hi@r3x.sh> 1756796740 -0400	commit (initial): nix-darwin flake bootstrap
+b045fc119dccab05fb75cddc3dea39a814a7357a 86d7c67dbfdabbe8e99319c1ff7be065a9cfaf85 Rex Liu <hi@r3x.sh> 1756797108 -0400	commit: nix-darwin flake bootstrap
+86d7c67dbfdabbe8e99319c1ff7be065a9cfaf85 4735f4b61852098fc6d47ca1c75ff09e03af1992 Rex Liu <hi@r3x.sh> 1756797127 -0400	commit: nix-darwin flake bootstrap
+4735f4b61852098fc6d47ca1c75ff09e03af1992 895e5e8b82281f4304730d4c2ca976f8904f8178 Rex Liu <hi@r3x.sh> 1757555660 -0400	commit: Add macbook darwin + home modules
+895e5e8b82281f4304730d4c2ca976f8904f8178 955b5f420ba7d6ce1dc45b088efeccfcadb3463e Rex Liu <hi@r3x.sh> 1757560751 -0400	commit: wip: update nix-darwin config
+955b5f420ba7d6ce1dc45b088efeccfcadb3463e c3ec44ef79b9baa0d8c6cbd4fab6cf55e15298fb Rex Liu <hi@r3x.sh> 1757578808 -0400	commit: Add modules and darwin host imports
+c3ec44ef79b9baa0d8c6cbd4fab6cf55e15298fb f06a85a34b2a32736156f00da8a879fd7f7e32d3 Rex Liu <hi@r3x.sh> 1757578837 -0400	commit: track all shit
+f06a85a34b2a32736156f00da8a879fd7f7e32d3 878bd35bb70288ca16e1056855961d56aa045d11 Rex Liu <hi@r3x.sh> 1757619680 -0400	commit: nix-darwin: restructure modules + dev workflows
+878bd35bb70288ca16e1056855961d56aa045d11 fcbde7c68b83e37d162624e79a86d32b82fef041 Rex Liu <hi@r3x.sh> 1757619885 -0400	commit: feat: overlays scaffold + kind ingress/registry helpers; docs (sops alternative)
+fcbde7c68b83e37d162624e79a86d32b82fef041 5788ab8f677d68f87f64e51844da3ff63c8c8cfc Rex Liu <hi@r3x.sh> 1757621305 -0400	commit: ml: add global opt-in modules (dev-ml, env, remote, tunnels) and 1Password CLI integration; wire imports for macbook host
+5788ab8f677d68f87f64e51844da3ff63c8c8cfc b04395e7f95bc6278a5cc928ead584c0e5f38f97 Rex Liu <hi@r3x.sh> 1757621354 -0400	commit: dev-ml: use python312Packages.jupyterlab for JupyterLab on macOS
+b04395e7f95bc6278a5cc928ead584c0e5f38f97 a316faf10e1e888133bfdbf9f46b7f31d3ebaa58 Rex Liu <hi@r3x.sh> 1757621587 -0400	commit: dev-ml: drop solana-cli from Nix profile to avoid heavy source build; prefer Homebrew for CLI
+a316faf10e1e888133bfdbf9f46b7f31d3ebaa58 31b2f06af6c53592395ffdbdc6b174b73b394062 Rex Liu <hi@r3x.sh> 1757622037 -0400	commit: macbook: enable 1Password CLI + SSH agent; enable ml.env + ml.remote; add SSH tunnels for Jupyter/MLflow (destination=gpu-box)
+31b2f06af6c53592395ffdbdc6b174b73b394062 9019dd90355e28d3ba8a46ad282c6f89c4a0d61e Rex Liu <hi@r3x.sh> 1757622127 -0400	commit: fix(dotfiles): correct relative paths for HM home.file sources
+9019dd90355e28d3ba8a46ad282c6f89c4a0d61e 54af25b3509271d8a49fae7dac82b0317ba35890 Rex Liu <hi@r3x.sh> 1757622492 -0400	commit: docs: refresh AGENTS.md contributor guide
+54af25b3509271d8a49fae7dac82b0317ba35890 93a2559a076628ac52eb69c7337c3b056d70d237 Rex Liu <hi@r3x.sh> 1757622631 -0400	commit: feat(HM): enable safe profiles + dotfiles; switch host to modules/default; fix conflicts in dev-* profiles
+93a2559a076628ac52eb69c7337c3b056d70d237 ed5f03b75a962562b3bae041c66fc7d06307ad00 Rex Liu <hi@r3x.sh> 1757623592 -0400	commit: security: harden SSH defaults (no agent forward; strict host keys), stricter direnv; secure ml-env perms; safer switch app; enable macOS firewall; nix sandbox + require-sigs
+ed5f03b75a962562b3bae041c66fc7d06307ad00 fa8a33ba5c6bf4a5b2e4bfda2d998603e33ed587 Rex Liu <hi@r3x.sh> 1757793155 -0400	commit: macos setting tweaks
+fa8a33ba5c6bf4a5b2e4bfda2d998603e33ed587 bd75df29895741c104434a25fa06978ecb0564b5 Rex Liu <hi@r3x.sh> 1757796260 -0400	commit: update flake.nix
