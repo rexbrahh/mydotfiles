@@ -30,14 +30,14 @@ return {
         "cssls", -- Already configured
         "tailwindcss", -- Already configured
         "jsonls", -- Already configured
-        
+
         -- Popular Languages
         "lua_ls", -- Already configured
         "gopls", -- Already configured
         "basedpyright", -- Already configured
         "ruff", -- Already configured
         "bashls", -- Already configured
-        
+
         -- Additional Popular LSPs
         "rust_analyzer", -- Rust
         "clangd", -- C/C++

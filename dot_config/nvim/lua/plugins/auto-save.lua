@@ -38,7 +38,7 @@ return {
 
         local filetype = fn.getbufvar(buf, "&filetype")
         local bufname = fn.bufname(buf)
-        
+
         -- check if filetype is not in blacklist
         local filetype_ok = true
         for _, ft in ipairs(filetype_blacklist) do
@@ -50,7 +50,7 @@ return {
 
         if filetype_ok then
           -- only save normal files (not special buffers)
-          return fn.getbufvar(buf, "&modifiable") == 1 
+          return fn.getbufvar(buf, "&modifiable") == 1
             and fn.getbufvar(buf, "&readonly") == 0
             and fn.getbufvar(buf, "&buftype") == ""
             and bufname ~= "" -- only save named buffers

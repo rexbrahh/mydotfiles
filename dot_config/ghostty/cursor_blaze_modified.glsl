@@ -99,7 +99,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
     // Make the trail thinner by scaling the cursor width
     float trailWidthScale = 0.4; // Reduced from implicit 1.0 to make trail thinner
-    
+
     //Set every vertex of my parellogram - modified to use thinner trail
     vec2 v0 = vec2(currentCursor.x + (currentCursor.z * trailWidthScale) * vertexFactor, currentCursor.y - currentCursor.w);
     vec2 v1 = vec2(currentCursor.x + (currentCursor.z * trailWidthScale) * invertedVertexFactor, currentCursor.y);

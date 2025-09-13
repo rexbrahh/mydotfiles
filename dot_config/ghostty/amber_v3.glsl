@@ -82,7 +82,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     #if !defined(WEB)
     fragColor = texture(iChannel0, fragCoord.xy / iResolution.xy);
     #endif
-    
+
     vec2 vu = normalize(fragCoord, 1.);
     vec2 offsetFactor = vec2(-.5, 0.5);
 
@@ -113,51 +113,51 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
         // Calculate control point for bezier curve to create natural curve
         vec2 direction = normalize(centerCC - centerCP);
         vec2 perpendicular = vec2(-direction.y, direction.x);
-        
+
         // Control point offset based on movement direction and distance
         float curveOffset = CURVE_STRENGTH * lineLength * sign(dot(perpendicular, vec2(1.0, 0.0)));
         vec2 controlPoint = mix(centerCP, centerCC, 0.5) + perpendicular * curveOffset;
-        
+
         // Extend the tail beyond the previous position
         vec2 tailEnd = centerCP - direction * lineLength * TAIL_LENGTH_FACTOR;
-        
+
         // Create the comet tail using multiple capsules
         float minTrailDist = 1000.0;
-        
+
         for (int i = 0; i < TAIL_SEGMENTS; i++) {
             float t1 = float(i) / float(TAIL_SEGMENTS);
             float t2 = float(i + 1) / float(TAIL_SEGMENTS);
-            
+
             // Sample points along the bezier curve
             vec2 p1 = bezierQuad(centerCC, controlPoint, tailEnd, t1);
             vec2 p2 = bezierQuad(centerCC, controlPoint, tailEnd, t2);
-            
+
             // Calculate width with dramatic tapering that starts after TAPER_START
             float baseWidth1 = currentCursor.z * 0.5 * HEAD_WIDTH_MULTIPLIER;
             float baseWidth2 = currentCursor.z * 0.5 * HEAD_WIDTH_MULTIPLIER;
-            
+
             // Apply tapering only after TAPER_START point
             float taperT1 = max(0.0, (t1 - TAPER_START) / (1.0 - TAPER_START));
             float taperT2 = max(0.0, (t2 - TAPER_START) / (1.0 - TAPER_START));
-            
+
             float width1 = baseWidth1 * (1.0 - pow(taperT1, TAPER_POWER));
             float width2 = baseWidth2 * (1.0 - pow(taperT2, TAPER_POWER));
-            
+
             // Ensure minimum width
             width1 = max(width1, MIN_TAIL_WIDTH);
             width2 = max(width2, MIN_TAIL_WIDTH);
-            
+
             float segmentDist = sdCapsule(vu, p1, p2, width1, width2);
             minTrailDist = min(minTrailDist, segmentDist);
         }
-        
+
         // Apply trail coloring with dramatic falloff
         if (minTrailDist < 0.05) {
             // Calculate position along tail for color variation
             float tailT = 0.0;
             vec2 closestPoint = centerCC;
             float minDist = distance(vu, centerCC);
-            
+
             // Find closest point on curve for color interpolation
             for (int i = 0; i <= 20; i++) {
                 float t = float(i) / 20.0;
@@ -169,24 +169,24 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
                     closestPoint = curvePoint;
                 }
             }
-            
+
             // Dramatic color and opacity falloff
             float intensityFalloff = pow(1.0 - tailT, 2.0);
             float widthFalloff = pow(1.0 - tailT, TAPER_POWER);
-            
+
             // Create amber gradient from bright to deep
             vec4 amberTrail = mix(TRAIL_COLOR_ACCENT, TRAIL_COLOR_GLOW, tailT * 0.8);
-            
+
             // Main trail body
             float trailAlpha = antialising(minTrailDist) * OPACITY * intensityFalloff;
             newColor = mix(newColor, amberTrail, trailAlpha);
-            
+
             // Outer glow effect
             float glowRadius = 0.015 * (1.0 + widthFalloff);
             float glowFalloff = 1.0 - smoothstep(-glowRadius, glowRadius, minTrailDist);
             vec4 glowColor = mix(TRAIL_COLOR_GLOW, TRAIL_COLOR, 0.2);
             newColor = mix(newColor, glowColor, glowFalloff * GLOW_INTENSITY * intensityFalloff);
-            
+
             // Inner bright core for comet effect
             float coreRadius = 0.003 * widthFalloff;
             float coreFalloff = 1.0 - smoothstep(-coreRadius, coreRadius, minTrailDist);

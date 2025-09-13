@@ -91,10 +91,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     #if !defined(WEB)
     fragColor = texture(iChannel0, fragCoord.xy / iResolution.xy);
     #endif
-    
+
     // Preserve original color for alpha channel
     vec4 originalColor = fragColor;
-    
+
     // Normalized coordinates
     vec2 vu = normalize(fragCoord, 1.);
     vec2 offsetFactor = vec2(-.5, 0.5);
@@ -110,41 +110,41 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     // Calculate cursor centers
     vec2 centerCC = getRectangleCenter(currentCursor);
     vec2 centerCP = getRectangleCenter(previousCursor);
-    
+
     // Distance and time-based fade
     float progress = clamp((iTime - iTimeCursorChange) / DURATION, 0.0, 1.0);
     float easedProgress = ease(progress);
-    
+
     // Early exit if trail has fully faded
     if (progress >= 1.0) {
         fragColor = originalColor;
         return;
     }
-    
+
     // Trail tapering based on distance from head
     float lineLength = distance(centerCC, centerCP);
     float distanceToHead = distance(vu.xy, centerCC);
     float distanceToTail = distance(vu.xy, centerCP);
     float alongTrail = clamp(distanceToHead / (lineLength + 0.001), 0.0, 1.0);
-    
+
     // Smoother taper with exponential curve for more natural comet shape
     float taperFactor = mix(1.0, TAIL_TAPER, pow(alongTrail, 1.5));
-    
+
     // Add curve to the trail - creates a subtle arc
     vec2 trailDir = normalize(centerCP - centerCC);
     vec2 trailPerp = vec2(-trailDir.y, trailDir.x); // Perpendicular to trail direction
-    
+
     // Curve amount varies along the trail (more curve in the middle)
     float curveAmount = sin(alongTrail * 3.14159) * TRAIL_CURVE * currentCursor.z;
     vec2 curveOffset = trailPerp * curveAmount * (1.0 - alongTrail * 0.5);
-    
+
     // Calculate interpolated position along trail with curve
     vec2 trailPos = mix(centerCC, centerCP, alongTrail) + curveOffset;
-    
+
     // Build curved vertices - use bezier-like interpolation
     vec2 v0 = vec2(currentCursor.x + currentCursor.z * vertexFactor, currentCursor.y - currentCursor.w);
     vec2 v1 = vec2(currentCursor.x + currentCursor.z * invertedVertexFactor, currentCursor.y);
-    
+
     // Add curve to tail vertices with enhanced tapering
     vec2 tailCurve = trailPerp * curveAmount * 0.7;
     vec2 v2 = vec2(previousCursor.x + currentCursor.z * invertedVertexFactor * taperFactor, previousCursor.y) + tailCurve;
@@ -153,40 +153,40 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     // Calculate SDFs
     float sdfCursor = getSdfRectangle(vu, currentCursor.xy - (currentCursor.zw * offsetFactor), currentCursor.zw * 0.5);
     float sdfTrail = getSdfParallelogram(vu, v0, v1, v2, v3);
-    
+
     // Comet glow effect
     float glowIntensity = cometGlow(abs(sdfTrail), GLOW_RADIUS);
     float headGlow = cometGlow(distanceToHead, GLOW_RADIUS * 2.0);
-    
+
     // Alpha modulation for fade - make it actually disappear
     float fadeAlpha = 1.0 - easedProgress;
     float distanceFade = 1.0 - smoothstep(0.0, 1.0, alongTrail * 0.7);
     float combinedAlpha = fadeAlpha * distanceFade * TRAIL_OPACITY;
-    
+
     // Cut off rendering when alpha is too low
     if (combinedAlpha < 0.01) {
         fragColor = originalColor;
         return;
     }
-    
+
     // Layer the effects
     vec4 newColor = fragColor;
-    
+
     // Outer glow (subtle amber halo)
     vec4 glowColor = mix(AMBER_TAIL, AMBER_GLOW, 1.0 - alongTrail);
     newColor = mix(newColor, glowColor, glowIntensity * combinedAlpha * 0.3);
-    
+
     // Trail core (solid amber)
     float trailCore = antialising(sdfTrail);
     vec4 trailColor = mix(AMBER_TAIL, AMBER_CORE, 1.0 - alongTrail * 0.5);
     newColor = mix(newColor, trailColor, trailCore * combinedAlpha);
-    
+
     // Head accent (bright spot at cursor)
     newColor = mix(newColor, AMBER_ACCENT, headGlow * fadeAlpha * 0.4);
-    
+
     // Preserve cursor interior (don't draw over the actual cursor)
     fragColor = mix(newColor, originalColor, step(sdfCursor, 0));
-    
+
     // Ensure we preserve the original alpha channel for transparency
     fragColor.a = originalColor.a;
 }

@@ -21,3 +21,11 @@
 *.pem
 *.der
 id_*
+
+# Nix config nested VCS + OS files (do not track)
+dot_config/nix/dot_git/
+dot_config/nix/**/dot_DS_Store
+dot_config/nix/symlink_result
+# Pre-commit cache
+.pre-commit-cache/
+# AI-generated Markdown (safety)

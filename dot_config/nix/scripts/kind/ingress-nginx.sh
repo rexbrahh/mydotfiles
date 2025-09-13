@@ -11,4 +11,3 @@ kubectl apply -n "$KNS" -f https://raw.githubusercontent.com/kubernetes/ingress-
 echo "Waiting for ingress-nginx controller..."
 kubectl -n "$KNS" rollout status deployment/ingress-nginx-controller --timeout=120s
 echo "Ingress NGINX installed."
-

@@ -143,7 +143,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
     // Create amber gradient from deep to light
     vec4 amberTrail = mix(TRAIL_COLOR_GLOW, TRAIL_COLOR_ACCENT, tailT * 0.7);
-    
+
     // Main trail body with amber color
     newColor = mix(newColor, amberTrail, antialising(sdfTrail) * OPACITY * tailFade);
 

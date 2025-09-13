@@ -26,4 +26,3 @@ final: prev: {
 
 Note: Keep overlays small and intentional. For project-specific hacks, use a
 project flake overlay instead of the system overlay.
-

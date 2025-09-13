@@ -161,7 +161,7 @@ icon_error = ""
 # : }}}
 
 # : File-specific styles {{{
- 
+
 [filetype]
 
 rules = [

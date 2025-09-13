@@ -1,0 +1,31 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: detect-private-key
+      - id: detect-aws-credentials
+        args: [--allow-missing-credentials]
+      - id: check-added-large-files
+        args: ['--maxkb=1024']
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args:
+          - '--baseline'
+          - '.secrets.baseline'
+        additional_dependencies:
+          - gibberish-detector==0.1.1
+  - repo: local
+    hooks:
+      - id: block-ai-md
+        name: Block AI-generated Markdown files
+        entry: bash scripts/hooks/block-ai-md.sh
+        language: system
+        pass_filenames: true
+        types: [markdown]
+        stages: [pre-commit]

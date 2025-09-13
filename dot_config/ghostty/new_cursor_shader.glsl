@@ -157,4 +157,3 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     newColor = mix(fragColor, newColor, 1.0 - alphaModifier);
     fragColor = mix(newColor, fragColor, step(sdfCursor, 0));
 }
-

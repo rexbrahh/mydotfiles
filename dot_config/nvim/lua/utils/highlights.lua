@@ -85,7 +85,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
     set_hl("NeoTreeGitUntracked", { link = "Added" })
     set_hl("NeoTreeGitRenamed", { link = "Added" })
     set_hl("NeoTreeGitConflict", { link = "Removed" })
-    
+
     -- Force transparency overrides
     set_hl("Normal", { bg = "NONE" })
     set_hl("NormalNC", { bg = "NONE" })
@@ -102,7 +102,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
     set_hl("PmenuSel", { bg = "NONE" })
     set_hl("EndOfBuffer", { bg = "NONE" })
     set_hl("NonText", { bg = "NONE" })
-    
+
     -- Plugin specific transparency
     set_hl("NeoTreeNormal", { bg = "NONE" })
     set_hl("NeoTreeEndOfBuffer", { bg = "NONE" })
@@ -111,12 +111,12 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
     set_hl("AlphaHeader", { bg = "NONE" })
     set_hl("AlphaButtons", { bg = "NONE" })
     set_hl("AlphaFooter", { bg = "NONE" })
-    
+
     -- Lualine transparency
     set_hl("lualine_a_normal", { bg = "NONE" })
     set_hl("lualine_b_normal", { bg = "NONE" })
     set_hl("lualine_c_normal", { bg = "NONE" })
-    
+
     -- Keep important highlights visible
     -- Cursor stays visible (don't touch Cursor, lCursor, etc.)
     -- Visual selection stays visible (don't touch Visual)

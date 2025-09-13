@@ -51,4 +51,3 @@ ignore = false
 [keys.select]
 "A-x" = "extend_to_line_bounds"
 "X" = ["extend_line_up", "extend_to_line_bounds"]
-

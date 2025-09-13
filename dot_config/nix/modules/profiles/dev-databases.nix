@@ -12,4 +12,3 @@
     kcat          # Kafka client (formerly kafkacat)
   ];
 }
-

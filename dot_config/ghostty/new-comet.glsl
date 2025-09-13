@@ -85,4 +85,3 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // Head glow inside the rect
     float headR = curSizeN.y * HEAD_GLOW_SOFT;
     float dHead = length(p - curC) / max(headR, 1e-6);
-

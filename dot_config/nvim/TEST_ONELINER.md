@@ -35,11 +35,11 @@ bludvim --update        # Update to latest version
 
 ## Ready for Push
 
-✅ **Docker build tested** - Works with Alpine Linux  
-✅ **Installation script tested** - Creates bludvim command  
-✅ **Wrapper script tested** - All commands working  
-✅ **Docker compose tested** - Container starts properly  
-✅ **One-liner ready** - Install script accessible via curl  
+✅ **Docker build tested** - Works with Alpine Linux
+✅ **Installation script tested** - Creates bludvim command
+✅ **Wrapper script tested** - All commands working
+✅ **Docker compose tested** - Container starts properly
+✅ **One-liner ready** - Install script accessible via curl
 
 ## Files Ready for Git
 

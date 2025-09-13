@@ -39,7 +39,7 @@ check_docker() {
     if ! command -v docker &> /dev/null; then
         error "Docker is not installed. Please install Docker first: https://docs.docker.com/get-docker/"
     fi
-    
+
     if ! docker info &> /dev/null; then
         error "Docker daemon is not running. Please start Docker first."
     fi
@@ -57,7 +57,7 @@ check_docker_compose() {
 # Clone or update the repository
 setup_repo() {
     info "Setting up BludVim..."
-    
+
     if [ -d "$INSTALL_DIR" ]; then
         info "Updating existing installation..."
         cd "$INSTALL_DIR"
@@ -79,7 +79,7 @@ build_image() {
 # Create wrapper script
 create_wrapper() {
     info "Creating wrapper script..."
-    
+
     # Create the wrapper script content
     cat > "$INSTALL_DIR/bludvim" << 'EOF'
 #!/bin/bash
@@ -176,7 +176,7 @@ EOF
 # Install wrapper script globally
 install_globally() {
     info "Installing bludvim command globally..."
-    
+
     # Try to install to /usr/local/bin (requires sudo)
     if sudo cp "$INSTALL_DIR/bludvim" "$BINARY_PATH" 2>/dev/null; then
         success "Installed to $BINARY_PATH"
@@ -186,7 +186,7 @@ install_globally() {
         mkdir -p "$USER_BIN"
         cp "$INSTALL_DIR/bludvim" "$USER_BIN/bludvim"
         success "Installed to $USER_BIN/bludvim"
-        
+
         # Check if user bin is in PATH
         if [[ ":$PATH:" != *":$USER_BIN:"* ]]; then
             warning "Add $USER_BIN to your PATH to use 'bludvim' command:"
@@ -202,13 +202,13 @@ main() {
     echo "│           Docker Neovim Configuration              │"
     echo "╰─────────────────────────────────────────────────────╯"
     echo
-    
+
     check_docker
     setup_repo
     build_image
     create_wrapper
     install_globally
-    
+
     echo
     success "BludVim installed successfully!"
     echo

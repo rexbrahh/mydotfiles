@@ -11,4 +11,3 @@ fi
 
 kind create cluster --name "$NAME" --config "$CONF_DIR/cluster.yaml" --wait 120s
 echo "Cluster '$NAME' is up. Use '$(dirname "$CONF_DIR")/kubeconfig.sh' to export KUBECONFIG."
-

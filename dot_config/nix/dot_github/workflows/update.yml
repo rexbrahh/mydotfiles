@@ -29,4 +29,3 @@ jobs:
           if [ -e .git/refs/remotes/origin/HEAD ]; then
             echo "nvd diff is available locally; rely on PR checks"
           fi
-

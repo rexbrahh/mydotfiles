@@ -29,4 +29,3 @@ command = "jq"
 options = ["-S", "."]
 stdin = true
 includes = ["*.json"]
-

@@ -13,4 +13,3 @@ mkdir -p "$(dirname "$OUT")"
 kind export kubeconfig --name "$NAME" --kubeconfig "$OUT"
 echo "Exported kubeconfig to $OUT"
 echo "export KUBECONFIG=$OUT"
-

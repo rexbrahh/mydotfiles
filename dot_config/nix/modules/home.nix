@@ -25,7 +25,7 @@
 
       set -gx VISUAL nvim
       fish_add_path -g /run/current-system/sw/bin
-      
+
       set -gx PAGER less
       umask 077
 
@@ -113,7 +113,7 @@
       '';
     };
   };
-  
+
   };
   # Or Zsh (toggle as you like)
 #  programs.zsh = {
@@ -230,15 +230,15 @@
     git
     gh
     jq
-        ripgrep 
-    fd 
-    sd 
-    curl 
-    wget 
-    htop 
-    btop 
-    tree 
-    rsync 
+        ripgrep
+    fd
+    sd
+    curl
+    wget
+    htop
+    btop
+    tree
+    rsync
     gnupg
     # dev
     uv # fast Python packager

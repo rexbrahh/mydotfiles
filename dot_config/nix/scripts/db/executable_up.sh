@@ -10,4 +10,3 @@ fi
 
 $COMPOSE -f "$DIR/compose.yml" up -d
 echo "Postgres is up on localhost:5432 (postgres/postgres)"
-

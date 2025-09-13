@@ -1,4 +1,4 @@
-# pack-refs with: peeled fully-peeled sorted 
+# pack-refs with: peeled fully-peeled sorted
 aeb196db5c13161defbac64314d47ca346b34826 refs/remotes/origin/fix-automatic-tpm-install
 bfc7a2c2cbbbb0c448b23396bdb7bf088b8c6dc3 refs/remotes/origin/fix_emacs_continue_key
 99469c4a9b1ccf77fade25842dc7bafbc8ce9946 refs/remotes/origin/master

@@ -34,4 +34,3 @@ Notes
 - The generator covers common keys; unsupported or app-specific preferences
   should be managed via Home Manager dotfiles or activation scripts.
 - Sensitive items (Apple ID, Touch ID, TCC permissions) remain manual.
-

@@ -157,4 +157,3 @@ cursor_blink = false
 cd_title  = "Change directory:"
 cd_origin = "top-center"
 cd_offset = [ 0, 2, 50, 3 ]
-

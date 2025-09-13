@@ -23,4 +23,3 @@ data:
 EOF
 
 echo "Local registry on localhost:${REG_PORT} ready. Tag/push images to localhost:${REG_PORT}/<name>."
-

@@ -170,5 +170,3 @@ Modify mappings in `lua/config/keymaps.lua` and individual plugin configs
 
 ### **Theme & Colors**
 Customize colors in `lua/plugins/colorschemes.lua` and highlight utilities
-
-

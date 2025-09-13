@@ -15,4 +15,3 @@ pkgs.mkShell {
     echo "DB: docker compose -f .dev/compose.yml up -d"
   '';
 }
-

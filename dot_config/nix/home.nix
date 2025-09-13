@@ -73,7 +73,7 @@
     		export HOMEBREW_NO_AUTO_UPDATE=1
   		'';
   };
- 
+
   programs.git = {
     enable = true;
     userName = "Rex Liu";
@@ -82,4 +82,3 @@
 
   # other dotfile and system preferences here
 }
-

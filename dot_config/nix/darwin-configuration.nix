@@ -2,15 +2,15 @@
 
 {
   nix.enable = false;
-	
+
   home-manager.users.rexliu = import ./home.nix;
   system.stateVersion = 6;
   security.pam.services.sudo_local.touchIdAuth = true;
- 
+
   users.users.rexliu = {
     name = "rexliu";
     home = "/Users/rexliu";
-  };  
+  };
   #system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false; # faster key repeat
   #system.defaults.NSGlobalDomain.KeyRepeat = 2;
   #system.defaults.NSGlobalDomain.InitialKeyRepeat = 25;

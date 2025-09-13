@@ -12,4 +12,3 @@ This folder contains drop-in examples for a typical local microservice workflow.
 3. Start DB: `docker compose -f .dev/compose.yml up -d`
 4. Start cluster: `kind create cluster --config .dev/kind/cluster.yaml --name dev`
 5. Export kubeconfig: `kind export kubeconfig --name dev --kubeconfig ~/.kube/kind-dev.conf`
-

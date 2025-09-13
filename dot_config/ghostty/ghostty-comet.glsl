@@ -108,4 +108,3 @@ void main() {
 
     frag_color = vec4(color, base.a);
 }
-
